@@ -129,20 +129,18 @@
         import { getFirestore, collection, addDoc, onSnapshot, orderBy, query } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
 
         // Firebase config
-const firebaseConfig = {
-  apiKey: "AIzaSyCHMe9j4GySWJ8qHv_E5_IVqCt8zqPw590",
-  authDomain: "class1-b68a2.firebaseapp.com",
-  projectId: "class1-b68a2",
-  storageBucket: "class1-b68a2.appspot.com",
-  messagingSenderId: "877634601479",
-  appId: "1:877634601479:web:e8683a6968f26111e3e0a2",
-  measurementId: "G-2BYVR2LYES"
-};
-
+        const firebaseConfig = {
+            apiKey: "AIzaSyBqol7KbGT5p7ppA9z1zu0d7YiIxkaEm1Q",
+            authDomain: "sample-309eb.firebaseapp.com",
+            projectId: "sample-309eb",
+            storageBucket: "sample-309eb.appspot.com",
+            messagingSenderId: "971052026993",
+            appId: "1:971052026993:web:b2224b762eb9dc47105fd0",
+            measurementId: "G-WQ2PW6FFQE"
+        };
 
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
         const auth = getAuth(app);
         const db = getFirestore(app);
 
@@ -172,7 +170,7 @@ const firebaseConfig = {
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
                     const messageClass = data.userName === currentUser.displayName ? 'my-message' : 'other-message';
-                    messagesContainer.innerHTML += <div class="message ${messageClass}"><strong>${data.userName}</strong>: ${data.text}</div>;
+                    messagesContainer.innerHTML += `<div class="message ${messageClass}"><strong>${data.userName}</strong>: ${data.text}</div>`;
                 });
                 messagesContainer.scrollTop = messagesContainer.scrollHeight;
             });
